@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>2019 Module Loading</title>
+    <link href="favicon.ico" rel="shortcut icon" />
+    <script defer type="module" src="js/clean_es2015/app.mjs"></script>
+    <script defer type="module">
+      console.log("in 1st inline module");
+    </script>
+    <script type="text/javascript">
+      console.log("in 1st inline script");
+    </script>
+    <!--This script runs if your browser does not have module functionality -->
+    <script defer nomodule src="js/clean_es2015/app.js"></script>
+  </head>
+  <body>
+    <header id="header_module_list">
+      modules loaded:
+    </header>
+    <section id="links">
+      <a href="https://codepen.io/samthor/pen/MmvdOM" target="_blank">Features before modules</a>
+    </section>
+    <section>
+        <h3>Dynamically-Loaded Categories</h3>
+        <ul id="categories">
+            <% categories.forEach((category) => {%>
+                <li><%= category %></li>
+            <% }) %>
+        </ul>
+    </section>
+    <script>
+        // Immediately invoked function expression
+      (function moduleList() {
+        // HTML Collection of all script elements: app.mjs, '1st inline module', '1st inline script', app.js
+        // Container for printed list of loadeed modules
+        let scripts = document.getElementsByTagName('script'),
+            headerModuleList = document.getElementById('header_module_list');
+      // Wait
+      for (let i = 0; i < 2000000000; i++) {
+
+      }
+        for (const script of scripts) {
+          //console.log(script);
+          script.onload = function() {
+            console.log('script loaded')
+            headerModuleList.innerHTML += script.src;
+          };
+        };
+      }());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+'use strict';
+
+//console.log('Clean es2015 modules');
+
+import { car } from './cars.mjs';
+
+car.run();

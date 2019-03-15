@@ -1,0 +1,19 @@
+{
+  "name": "2019_js_module_tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "author": "Tyrell McCurbin",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "fetch": "^1.1.0",
+    "node-fetch": "^2.3.0",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
